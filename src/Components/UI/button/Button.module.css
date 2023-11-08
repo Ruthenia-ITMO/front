@@ -1,0 +1,17 @@
+.button{
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-style: solid;
+    border-width: 1px;
+    padding: .5rem 1rem;
+    display: inline-block;
+    font: 400 14px system-ui;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    color: #fff;
+    background: #1d49aa;
+}
+.button:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+}

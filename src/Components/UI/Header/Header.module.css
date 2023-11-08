@@ -1,0 +1,106 @@
+.header{
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+    position: fixed;
+    top: 0;
+    z-index: 1004;
+}
+.header > div{
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header > div > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header > div > div img{
+    width: 30px;
+    height: 30px;
+}
+.header > div > div h1{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 10px;
+    color: #343434;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px #ffffff;
+}
+.header > div div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.account_menu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+.account_menu > div {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #e4eaf2;
+    top: 45px;
+    box-shadow: 0px 0px 20px 0px rgb(154 161 171 / 45%);
+    right: 17%;
+    width: 200px;
+    z-index: 1006;
+    border-radius: 8px;
+}
+.account_menu.active{
+    display: block;
+}
+.account_menu > div > ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.account_menu > div > ul li > span {
+    text-decoration: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    text-shadow: 1px 1px 0 rgb(255 255 255);
+    padding: 12px 8px;
+    display: block;
+    transition: all 0.4s ease;
+    border-radius: .25rem;
+}
+.account_menu > div > ul li span span{
+    font-size: 14px;
+    padding-left: 5px;
+}
+.account_menu > div > ul li > span:hover {
+    background-color: #f4f5fd;
+}
+.header > div div:nth-child(2){
+    padding: .5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+.header > div div:nth-child(2) h6 {
+    font-weight: 500;
+    margin: 0;
+    margin-right: 10px;
+    color: #434343;
+    font-size: 14px;
+}
+.header > div div:nth-child(2) i {
+    color: #bdc5ce;
+}
+.header > div div:nth-child(2):hover {
+    background-color: #aeb7c21f;
+    border-color: #f1f3fa;
+}

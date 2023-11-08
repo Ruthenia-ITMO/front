@@ -1,0 +1,31 @@
+.navbar{
+    background: #fefeff;
+    width: 225px;
+    position: fixed;
+    left: 0;
+    top: 40px;
+    height: 100%;
+    padding: 6px 0;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+.navbar ul li a span:first-child{
+    padding-right: 15px;
+}
+.navbar ul{
+    padding: 0;
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 16px;
+    color: #434343;
+    padding-left: 14px !important;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+.navbar ul li a:hover{
+    background: #eee;
+}
