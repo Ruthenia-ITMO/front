@@ -12,22 +12,22 @@ const AppRouter = () => {
 
     return (
         isAuth
-            ? <div>
+            ?
                 <Routes>
                     {privateRoutes.map(route=>
                         <Route key={route.path} path={route.path} Component={route.component}  />
                     )}
                     <Route path="*"  element={<Navigate to="/main" replace={true} />} />
                 </Routes>
-            </div>
-            : <div>
+
+            :
                 <Routes>
                     {publicRoutes.map(route=>
                         <Route key={route.path}  path={route.path}  Component={route.component}  />
                     )}
                     <Route path="*"  element={<Navigate to="/login" replace={true} />} />
                 </Routes>
-            </div>
+
     );
 };
 

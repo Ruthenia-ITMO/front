@@ -1,10 +1,13 @@
 import React from 'react';
+import "../styles/cameras.css"
 
 const Cameras = () => {
     return (
-        <div>
-            
-        </div>
+        <main>
+            <div className="clm">
+                <h2>Активные камеры</h2>
+            </div>
+        </main>
     );
 };
 

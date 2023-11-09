@@ -1,5 +1,5 @@
 .navbar{
-    background: #fefeff;
+    background: #fff;
     width: 225px;
     position: fixed;
     left: 0;
@@ -8,6 +8,7 @@
     padding: 6px 0;
     transition: all 0.5s ease;
     z-index: 1000;
+    box-shadow: 4px 0px 35px 0 rgba(154,161,171,.15);
 }
 .navbar ul li a span:first-child{
     padding-right: 15px;
