@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import "../styles/main.css"
-import IllegalTradeService from "../API/IllegalTradeService";
+import TradeService from "../API/TradeService";
 import {getPageCount} from "../utils/pages";
 import {useFetching} from "../hooks/useFetching";
 import {useObserver} from "../hooks/useObserver";
@@ -18,10 +17,22 @@ const Main = () => {
     const [limit, setLimit] = useState(10)
     const [page, setPage] = useState(1)
     const lastElement = useRef()
+    let time = "";
+    if (hour >= 4 && hour < 12){
+        time = "Доброе утро!"
+    } else if(hour >= 12 && hour < 18){
+        time = "Хорошего дня!"
+    }else if(hour >= 18 && hour < 23) {
+        time = "Хорошего вечера!"
+    } else {
+        time = "Доброй ночи!"
+    }
+
+
 
 
     const [fetchPosts, isTradesLoading, tradeError] = useFetching(async (limit, page) => {
-        const response = await IllegalTradeService.getAll(limit, page)
+        const response = await TradeService.getAll(limit, page)
         setTrades([...trades, ...response.data])
         const totalCount = response.headers['x-total-count']
         setTotalPages(getPageCount(totalCount, limit))
@@ -50,15 +61,16 @@ const Main = () => {
     }, 500)
 
 
+
     return (
-        <main>
+        <main className="reports">
             <div>
                 <div className="clm">
                     <div>
-                        <h2>Good Day</h2>
+                        <h2>{time}</h2>
                         <span><i className="fa-solid fa-clock"></i><span id="hour">{hour.toString().length < 2 && "0"}{hour}</span><span id="temp">{seconds}</span><span id="min">{minutes.toString().length < 2 && "0"}{minutes}</span></span>
                     </div>
-                    <a href="#trading">What`s new?</a>
+                    <a href="#trading">Что нового?</a>
                     <img src="./assets/img/men.png" alt="men" />
                 </div>
                 <div className="clm">
@@ -85,7 +97,7 @@ const Main = () => {
                         <div key={trade.id}>
                             <img src={trade.url} alt=""/>
                             <div>
-                                <Link to="./cameras">{trade.title}</Link>
+                                <Link to={"/trade/" + trade.id}>{trade.title}</Link>
                                 <span>{trade.id}</span>
                             </div>
                         </div>

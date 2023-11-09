@@ -29,3 +29,298 @@ body{
     background: #fff;
     margin-top: 10px;
 }
+html {
+    scroll-behavior: smooth;
+}
+.reports > .clm{
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #00000020;
+    margin-left: 20%;
+    margin-top: 50px;
+    display: block;
+    margin-right: 20px;
+}
+.reports > div:first-child{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20px;
+    margin-top: 50px;
+    position:  relative;
+}
+.reports > div:first-child .clm{
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #00000020;
+}
+.reports > div:first-child .clm:last-child{
+    width: 67%;
+    display: flex;
+    align-items: center;
+}
+.reports > div:first-child .clm h2{
+    margin-bottom: 15px;
+    color: var(--main);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.reports > div:first-child .clm a{
+    margin-left: 10%;
+    background-color: var(--main);
+    border-color: var(--main);
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    transition: all 0.3s ease;
+}
+.reports > div:first-child .clm div > span{
+    color: #7366ff;
+    padding: 10px 14px;
+    background: linear-gradient(270deg, rgba(255,255,255,0.2) 2%, rgba(115,102,255,0.2) 3.07%, rgba(255,255,255,0.2) 94.5%);
+    border-radius: 5px;
+    text-align: left;
+    width: 40%;
+}
+.reports > div:first-child .clm span i{
+    padding-right: 10px;
+    font-size: 14px;
+}
+.reports > div:first-child .clm:first-child{
+    width: 30%;
+    padding: 10px;
+}
+.reports > div:first-child .clm:last-child a{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: transparent;
+    color: #007bff;
+}
+.reports > div:first-child .clm:first-child div{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+}
+.reports > div:first-child .clm:first-child img{
+    width: 100%;
+    margin-top: 20px;
+}
+.reports .list-info{
+    margin-top: 15px;
+    width: 100%;
+}
+.reports .list-info ul {
+    padding: 0;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 80%;
+    list-style: none;
+}
+.reports .list-info ul li > span{
+    text-decoration: none;
+    color: #2a5885;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.reports .list-info ul li{
+    display: block;
+    background: #fff;
+    margin-top: 30px;
+    padding: 8px;
+    border-radius: 20px;
+}
+.reports .list-info ul li span span:nth-child(1){
+    padding-bottom: 3px;
+    font-size: 19px;
+    box-shadow: inset 0 0 0 1px hsl(0deg 0% 100% / 10%), 0 2px 8px rgb(13 18 22 / 15%);
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 48px;
+    background: var(--main);
+    border-radius: .25rem;
+    color: #fff;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reports .list-info ul li span span:nth-child(2){
+    line-height: 15px;
+    color: #626d7a;
+}
+.reports h2{
+    margin: 20px 0;
+    margin-left: 7%;
+}
+.reports .report_header{
+    display: flex;
+    align-items: center;
+}
+.reports .spinner {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.reports .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #0f710f;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.reports .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+.reports .trades {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px;
+}
+.reports .trades > div{
+    padding: 5px;
+    display: flex;
+    cursor: default;
+    flex-direction: column;
+}
+.reports .trades > div  > div:not(.Loader_loader__S2avV) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 93%;
+}
+.reports .trades > div  > div span:last-child {
+    margin-left: auto;
+}
+.reports .trades > div  > div a{
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+.reports .trades > div  > div a:hover{
+    color: #0056b3;
+    text-decoration: underline;
+}
+.reports .trades > div img{
+    width: 95%;
+    height: 70%;
+    border-radius: 8px;
+}
+.cameras h2{
+    margin: 20px 0;
+    margin-left: 7%;
+}
+.cameras > .clm {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #00000020;
+    margin-left: 20%;
+    margin-top: 50px;
+    display: block;
+    margin-right: 20px;
+}
+.tradeIdPage > .clm {
+     background: #fff;
+     border-radius: 4px;
+     border: 1px solid #00000020;
+     margin-left: 20%;
+     margin-top: 50px;
+     display: block;
+     margin-right: 20px;
+ }
+.tradeIdPage h2 {
+    margin: 20px 0;
+    margin-left: 7%;
+}
+.tradeIdPage .clm > div{
+    width: 80%;
+    margin: 10px auto;
+}
+.tradeIdPage img{
+    width: 100%;
+    max-height: 80vh;
+}
+.tradeIdPage .clm > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+.cameras > div iframe{
+    display: block;
+    width: 100%;
+}
+.cameras > div > div{
+    width: 60%;
+    margin: 10px auto;
+    margin-top: 50px;
+}
+.cameras > div > div a{
+     color: #007bff;
+    margin-top: 10px;
+    display: block;
+     text-decoration: none;
+     transition: all 0.4s ease;
+ }
+.cameras > div > div a:hover{
+    color: #0056b3;
+    text-decoration: underline;
+}
+.cameras input{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.cameras .empty{
+    color: red;
+    text-align: center;
+    margin: 20px;
+}
+.services > .clm{
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #00000020;
+    margin-left: 20%;
+    margin-top: 50px;
+    display: block;
+    margin-right: 20px;
+}

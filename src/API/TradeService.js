@@ -1,5 +1,5 @@
 import axios from "axios";
-export default class IllegalTradeService{
+export default class TradeService {
     static async getAll(limit= 9, page = 1){
         const response = await axios.get('https://jsonplaceholder.typicode.com/photos', {
             params: {

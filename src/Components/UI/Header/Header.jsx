@@ -17,7 +17,7 @@ const Header = () => {
         <header className={classes.header}>
             <div>
                 <div>
-                    <img src="./assets/img/logo.png" alt="logo"/>
+                    <img src="http://localhost:3000/assets/img/logo.png" alt="logo"/>
                     <h1>Ruthenia</h1>
                 </div>
                 <div onClick={() => setVisible(classes.active)}>
