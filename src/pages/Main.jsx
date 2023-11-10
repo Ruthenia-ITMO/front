@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import TradeService from "../API/TradeService";
+import ApiService from "../API/ApiService";
 import {getPageCount} from "../utils/pages";
 import {useFetching} from "../hooks/useFetching";
 import {useObserver} from "../hooks/useObserver";
@@ -17,26 +17,17 @@ const Main = () => {
     const [limit, setLimit] = useState(10)
     const [page, setPage] = useState(1)
     const lastElement = useRef()
-    let time = "";
-    if (hour >= 4 && hour < 12){
-        time = "Доброе утро!"
-    } else if(hour >= 12 && hour < 18){
-        time = "Хорошего дня!"
-    }else if(hour >= 18 && hour < 23) {
-        time = "Хорошего вечера!"
-    } else {
-        time = "Доброй ночи!"
-    }
+
 
 
 
 
     const [fetchPosts, isTradesLoading, tradeError] = useFetching(async (limit, page) => {
-        const response = await TradeService.getAll(limit, page)
-        setTrades([...trades, ...response.data])
-        const totalCount = response.headers['x-total-count']
+        const response = await ApiService.getAll(limit, page)
+        setTrades([...trades, ...response.data.items])
+        const totalCount = response.data.count
         setTotalPages(getPageCount(totalCount, limit))
-    })
+    });
 
     useObserver(lastElement, page < totalPages, isTradesLoading, () => {
         setPage(page + 1);
@@ -67,19 +58,17 @@ const Main = () => {
             <div>
                 <div className="clm">
                     <div>
-                        <h2>{time}</h2>
+                        <h2>Admin Panel</h2>
                         <span><i className="fa-solid fa-clock"></i><span id="hour">{hour.toString().length < 2 && "0"}{hour}</span><span id="temp">{seconds}</span><span id="min">{minutes.toString().length < 2 && "0"}{minutes}</span></span>
                     </div>
-                    <a href="#trading">Что нового?</a>
+
                     <img src="./assets/img/men.png" alt="men" />
                 </div>
                 <div className="clm">
                     <div className="list-info">
                         <ul>
-                            <li><span><span>10</span><span>камер</span></span></li>
-                            <li><span><span>{totalPages*10}</span><span>нарушители</span></span></li>
-                            <li><span><span>5</span><span>торговлей</span></span></li>
-                            <li><span><span>1</span><span>админов</span></span></li>
+                            <li><span><span>{totalPages}</span><span>pages</span></span></li>
+                            <li><span><span>9</span><span>limit</span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -95,10 +84,10 @@ const Main = () => {
                 <div className="trades">
                     {trades.map((trade, index) =>
                         <div key={trade.id}>
-                            <img src={trade.url} alt=""/>
+                            <img src={trade.frame_url} alt="фото с камеры"/>
                             <div>
-                                <Link to={"/trade/" + trade.id}>{trade.title}</Link>
-                                <span>{trade.id}</span>
+                                <Link to={"/trade/" + trade.id}>{trade.stream.name}</Link>
+                                <span>{trade.timestamp}</span>
                             </div>
                         </div>
                     )}

@@ -8,12 +8,13 @@ import {useEffect, useState} from "react";
 import {AuthContext} from "./context";
 import Cookies from "js-cookie";
 import AppRouter from "./Components/AppRouter";
+import * as app from "react";
 
 function App() {
     const [isAuth, setIsAuth] = useState(false)
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        if (Cookies.get('auth') !== undefined) {
+        if (Cookies.get('access_token') !== undefined) {
             setIsAuth(true)
         }
         setLoading(false)

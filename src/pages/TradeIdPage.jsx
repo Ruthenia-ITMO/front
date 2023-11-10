@@ -1,15 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import TradeService from "../API/TradeService";
+import {Link, useParams} from "react-router-dom";
+import ApiService from "../API/ApiService";
 import {useFetching} from "../hooks/useFetching";
+import Button from "../Components/UI/button/Button";
+import Loader from "../Components/UI/Loader/Loader";
 
 const TradeIdPage = () => {
     const params = useParams()
     const [trade, setTrade] = useState({})
-    const [fetchingTradeByID, isLoading, error] = useFetching(async (id) => {
-        const response = await TradeService.getById(id)
+    const [fetchingTradeByID, isTradeIdLoading, error] = useFetching(async (id) => {
+        const response = await ApiService.getById(id)
         setTrade(response.data)
     })
+
+    const setReport = async (res) => {
+        const response = await ApiService.validity(params.id, res)
+        alert("Принято")
+    }
+
+
     useEffect(() => {
         fetchingTradeByID(params.id)
     }, [])
@@ -19,14 +28,19 @@ const TradeIdPage = () => {
             <div className="clm">
                 <h2>Подозрительная торговля {params.id}</h2>
                 <div>
-                    <img src={trade.url} alt=""/>
+                    <img src={trade.frame_url} alt="фото с камеры"/>
                     <div>
-                        <span>{trade.title}</span>
-                        <span>{trade.id}</span>
+                        <a href={"/stream/" + trade.stream_id}>Ссылка на стрим</a>
+                        <span>{trade.timestamp}</span>
                     </div>
                 </div>
+                <div className="btns">
+                    <Button onClick={() => setReport(false)}>Неправильно</Button>
+                    <Button onClick={() => setReport(true)}>Правильно</Button>
+                </div>
             </div>
-
+            {isTradeIdLoading &&
+                <div style={{display: 'flex', justifyContent: 'center', marginTop: '50px'}}><Loader /></div>}
         </main>
     );
 };

@@ -10,7 +10,7 @@ const Header = () => {
     const navigate = useNavigate()
     const logout = () => {
         setIsAuth(false)
-        Cookies.remove('auth')
+        Cookies.remove('access_token')
         navigate("/login")
     }
     return (

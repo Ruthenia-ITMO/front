@@ -18,6 +18,7 @@ const AppRouter = () => {
                         <Route key={route.path} path={route.path} Component={route.component}  />
                     )}
                     <Route path="*"  element={<Navigate to="/main" replace={true} />} />
+
                 </Routes>
 
             :
