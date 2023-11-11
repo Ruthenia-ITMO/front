@@ -15,7 +15,7 @@
 ```<link href="http://your_server_name/assets/libs/fontawesome/css/all.css" rel="stylesheet">```
 
 строчка 7:
-```<link rel="shortcut icon" href="http://localhost:3000/assets/img/logo.png" type="image/png">```
+```<link rel="shortcut icon" href="http://your_server_name/assets/img/logo.png" type="image/png">```
 
 3. Запуск
 Осталось только прописать команды
