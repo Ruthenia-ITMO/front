@@ -276,6 +276,9 @@ html {
     width: 80%;
     margin: 10px auto;
 }
+.tradeIdPage .clm > .btns{
+    width: 20%;
+}
 .tradeIdPage img{
     width: 100%;
     max-height: 80vh;
@@ -391,4 +394,102 @@ html {
 .streamIdPage h3 {
     margin: 20px 0;
     margin-left: 7%;
+}
+.services .clm h2{
+    margin: 20px 0;
+    margin-left: 7%;
+}
+.services .clm > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.services .clm > div a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 200px;
+    filter: drop-shadow(1px 1px 1px black);
+    margin: 0 auto;
+    color: var(--main);
+    margin-bottom: 20px;
+    background: #fff;
+    padding: .5rem;
+    border-radius: 8px;
+    color: #434343;
+    text-decoration: none;
+}
+.services .clm > div a:hover{
+    text-decoration: none;
+    background: #eee;
+}
+.services .clm > div span{
+    margin-top: 10px;
+    text-align: center;
+}
+.services .clm > div i{
+    font-size: 24px;
+}
+.tradeIdPage .btns button:first-child{
+    background: #eda4a4;
+}
+.tradeIdPage .btns button:last-child{
+    background: #c5e6ad;
+}
+.tradeIdPage .btns button:hover{
+    color: #434343;
+}
+.admins h2{
+    margin: 20px 0;
+    margin-left: 7%;
+}
+.admins > .clm {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #00000020;
+    margin-left: 20%;
+    margin-top: 50px;
+    display: block;
+    margin-right: 20px;
+}
+.admins form{
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
+.admins form > div{
+    margin: 30px auto;
+    width: 100%;
+}
+.admins form > div label{
+    display: inline-block;
+    width: 30%;
+}
+.admins form Input{
+    width: 60% !important;
+    border-radius: 0;
+}
+.admins form Button{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+}
+.admins form input{
+    width: 60% !important;
+    border-radius: 0;
+    font-size: 13px;
+    padding: .5rem 1rem;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    transition: all 0.4s ease;
+}
+.admins form input:hover{
+    border-color: #0f888f;
+}
+.admins form input:focus{
+    border-color: #0f888f;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgb(15 136 143 / 35%);
 }

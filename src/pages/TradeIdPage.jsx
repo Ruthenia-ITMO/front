@@ -4,6 +4,7 @@ import ApiService from "../API/ApiService";
 import {useFetching} from "../hooks/useFetching";
 import Button from "../Components/UI/button/Button";
 import Loader from "../Components/UI/Loader/Loader";
+import {toast, Toaster} from "react-hot-toast";
 
 const TradeIdPage = () => {
     const params = useParams()
@@ -15,7 +16,7 @@ const TradeIdPage = () => {
 
     const setReport = async (res) => {
         const response = await ApiService.validity(params.id, res)
-        alert("Принято")
+        toast.success("Success")
     }
 
 
@@ -41,6 +42,7 @@ const TradeIdPage = () => {
             </div>
             {isTradeIdLoading &&
                 <div style={{display: 'flex', justifyContent: 'center', marginTop: '50px'}}><Loader /></div>}
+            <Toaster position="bottom-right"/>
         </main>
     );
 };

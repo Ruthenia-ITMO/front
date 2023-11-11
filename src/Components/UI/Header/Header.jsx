@@ -21,7 +21,7 @@ const Header = () => {
                     <h1>Ruthenia</h1>
                 </div>
                 <div onClick={() => setVisible(classes.active)}>
-                    <h6>admin</h6>
+                    <h6>settings</h6>
                     <i className="fa-solid fa-angle-down"></i>
                 </div>
                 <div className={[classes.account_menu, visible].join(' ')} onClick={() => setVisible(null)}>

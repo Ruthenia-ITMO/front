@@ -19,7 +19,29 @@ export default class ApiService {
         return response;
     }
 
+    static async admin_add(login, password){
+        axios.defaults.headers.common["Authorization"] = "Bearer " + Cookies.get("access_token");
+        const data = { name: login, password: password, is_admin: true };
+        const response = await axios.post('http://45.9.24.232/users/add', data);
+        return response;
+    }
+
+    static async stream_add(name, rtsp){
+        axios.defaults.headers.common["Authorization"] = "Bearer " + Cookies.get("access_token");
+        const data = { name: name, rtsp_url: rtsp };
+        const response = await axios.post('http://45.9.24.232/streams/add', data);
+        return response;
+    }
+
+    static async service_add(name){
+        axios.defaults.headers.common["Authorization"] = "Bearer " + Cookies.get("access_token");
+        const data = { name: name};
+        const response = await axios.post('http://45.9.24.232/services/add', data);
+        return response;
+    }
+
     static async validity(id, valid){
+        axios.defaults.headers.common["Authorization"] = "Bearer " + Cookies.get("access_token");
         const data = { frame_id : id, is_valid: valid };
         const response = await axios.post('http://45.9.24.232/frames/validity', data);
         return response;

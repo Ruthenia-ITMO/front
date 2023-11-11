@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useFetching} from "../hooks/useFetching";
 import ApiService from "../API/ApiService";
-import videojs from "video.js";
 import ReactPlayer from "react-player";
 
 const StreamIdPage = () => {
@@ -13,6 +12,8 @@ const StreamIdPage = () => {
         const response = await ApiService.getStreamById(id)
         setStream(response.data)
     })
+
+
 
 
     useEffect(() => {

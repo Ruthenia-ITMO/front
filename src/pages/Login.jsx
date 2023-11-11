@@ -5,6 +5,7 @@ import {AuthContext} from "../context";
 import Cookies from "js-cookie";
 import "../styles/login.css"
 import ApiService from "../API/ApiService";
+import {toast, Toaster} from "react-hot-toast";
 
 
 const Login = () => {
@@ -21,6 +22,7 @@ const Login = () => {
             Cookies.set("access_token", response.data.access_token)
         } catch (e){
             document.getElementById("alert").innerHTML = "Неверный логин или пароль"
+            toast.error("Мы не нашли такого пользователя :(")
         }
 
     }
@@ -38,6 +40,7 @@ const Login = () => {
                     <Button>Save</Button>
                 </div>
             </form>
+            <Toaster position="bottom-right"/>
         </div>
 
     );
