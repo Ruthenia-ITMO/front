@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import classes from "./Header.module.css";
 import Cookies from "js-cookie";
-import {AuthContext} from "../../../context";
+import {AuthContext, SERVER_NAME} from "../../../context";
 import {useNavigate} from "react-router-dom";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
         <header className={classes.header}>
             <div>
                 <div>
-                    <img src="http://localhost:3000/assets/img/logo.png" alt="logo"/>
+                    <img src={SERVER_NAME + "/assets/img/logo.png"} alt="logo"/>
                     <h1>Ruthenia</h1>
                 </div>
                 <div onClick={() => setVisible(classes.active)}>
