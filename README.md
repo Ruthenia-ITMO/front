@@ -9,14 +9,15 @@
 ```export const SERVER_NAME = "http://your_server_name"```
 
 2. Изменяем index.html 
-```в папке ./public/ находим файл index.html```
-Здесь необходимо поменять ссылки на подключение нужной библиотеки и иконки
+```в папке ./public/ находим файл index.html```<br>
+Здесь необходимо поменять ссылки на подключение нужной библиотеки и иконки<br>
 строчка 6:
 ```<link href="http://your_server_name/assets/libs/fontawesome/css/all.css" rel="stylesheet">```
-
+<br>
 строчка 7:
 ```<link rel="shortcut icon" href="http://localhost:3000/assets/img/logo.png" type="image/png">```
-3. Запуск
+<br>
+4. Запуск
 Осталось только прописать команды
 ```npm install```
 ```npm start```
