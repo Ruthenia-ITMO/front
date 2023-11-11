@@ -17,7 +17,7 @@
 строчка 7:
 ```<link rel="shortcut icon" href="http://localhost:3000/assets/img/logo.png" type="image/png">```
 
-4. Запуск
+3. Запуск
 Осталось только прописать команды
 ```npm install```
 ```npm start```
